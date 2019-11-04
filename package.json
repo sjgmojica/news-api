@@ -1,0 +1,37 @@
+{
+  "name": "news-api",
+  "version": "1.0.0",
+  "description": "Rest api to fetch news",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node index.js",
+    "dev:start": "clear; nodemon -r esm index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sjgmojica/news-api.git"
+  },
+  "keywords": [],
+  "author": "sjgmojica",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sjgmojica/news-api/issues"
+  },
+  "homepage": "https://github.com/sjgmojica/news-api#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/register": "^7.6.2",
+    "babel-loader": "^8.0.6",
+    "esm": "^3.2.25",
+    "nodemon": "^1.19.4"
+  }
+}
