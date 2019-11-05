@@ -1,12 +1,20 @@
 const request = require('request-promise');
+const qs = require('query-string');
 import ApiError from './ApiError';
 
 class CallApi {
 
+    /**
+     * @description: function to call news org
+     * @param {*} endpoint 
+     * @param {*} queryStr 
+     */
     static async get (endpoint, queryStr) {
-        
+   
+        const query = qs.stringify(queryStr);
+        const url = query ? `${process.env.NEWS_BASE_URL}/${endpoint}?${query}` : `${process.env.NEWS_BASE_URL}/${endpoint}`;
         const options = {
-            uri: queryStr ? `${process.env.NEWS_BASE_URL}${endpoint}?${queryStr}` : `${process.env.NEWS_BASE_URL}${endpoint}`,
+            uri: url,
             headers : {
                 'Content-type' : 'application/json',
                 'Authorization' : `Bearer ${process.env.NEWS_API_KEY}`
@@ -14,9 +22,8 @@ class CallApi {
             json: true
         };
 
-        request(options)
+        return request(options)
             .then(function(body) {
-                console.log('@helpers.CallApi.body ::', body);
                 if (body.status === 'error') throw new ApiError(body);
                 return body;
             })
