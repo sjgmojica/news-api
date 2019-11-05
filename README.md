@@ -2,8 +2,12 @@
 
 A simple api that fetch news from news.org
 
-Install
+# Setup
+Create .env file base base from .env_template
+
+# Install
 yarn install
 
-Start
-yarn dev:start
+# Start
+yarn start
+
