@@ -12,20 +12,22 @@ class Service {
      * @param {*} query 
      */
     async getAll(path, query) {
-        
-        let { page, pageSize } = query;
-        page = page ? page : 1;
-        pageSize = pageSize ? pageSize : 20
 
-        let queryParams = {
-            page,
-            pageSize,
-            ...query
-        }
-        
-        const endpoint = path.split('/').splice(-1,1).toString();
-       
         try {
+                    
+            // Set variables
+            let { page, pageSize } = query;
+            page = page ? page : 1;
+            pageSize = pageSize ? pageSize : 20
+
+            let queryParams = {
+                page,
+                pageSize,
+                ...query
+            }
+            
+            // Parse path eg. ['', api, news, top-headlines]. it will get the last name in the path
+            const endpoint = path.split('/').splice(-1,1).toString();
 
             // Fetch news 
             const {
