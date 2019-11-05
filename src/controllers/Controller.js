@@ -1,12 +1,14 @@
+import Service from '../services/Service';
 class Controller {
-    
+
     constructor(service) {
-        this.service = servvice;
+        this.service = service;
         this.getAll = this.getAll.bind(this);
     }
-
-    async fetchAll(req, res) {
+    async getAll(req, res) {
+        console.log(this.service);
         return res.status(200).send(await this.service.getAll(req.query));
+        // return res.status(200).send(await Service.getAll(req.query));
     }
 }
 

@@ -1,5 +1,6 @@
 import Controller from './Controller';
 import NewsService from './../services/NewsService';
+const newsService = new NewsService ();
 
 class PostController extends Controller {
 
@@ -7,3 +8,6 @@ class PostController extends Controller {
         super(service)
     }
 }
+
+export default new PostController(newsService);
+
