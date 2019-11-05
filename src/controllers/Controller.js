@@ -5,6 +5,7 @@ class Controller {
         this.service = service;
         this.getAll = this.getAll.bind(this);
     }
+    
     async getAll(req, res) {
         return res.status(200).send(await this.service.getAll(req.query));
         // return res.status(200).send(await Service.getAll(req.query));

@@ -5,6 +5,7 @@ class Service {
     }
 
     async getAll(query) {
+        console.log("query ::", query);
         let { page, pageSize } = query;
         page = page ? Number(page) : 1;
         pageSize = pageSize ? Number(pageSize) : 10

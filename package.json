@@ -4,7 +4,7 @@
   "description": "Rest api to fetch news",
   "main": "index.js",
   "scripts": {
-    "dev:start": "clear; nodemon -r esm index.js",
+    "start": "clear; nodemon -r esm index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
