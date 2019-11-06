@@ -31,13 +31,14 @@ class Service {
 
             // Fetch news 
             const {
-                articles
+                articles,
+                sources
             } = await CallApi.get(endpoint, queryParams);
       
             // Response
             return {
                 statusCode: 200,
-                data: articles,
+                data: articles || sources,
                 meta: {
                     page: Number(queryParams.page),
                     pageSize: Number(queryParams.pageSize)
